@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4ef">
+    <meta name="description" content="تعلم التسويق الرقمي بخطوات عملية ودروس يقودها خبراء المجال.">
+    <title>مِداد | تعلّم التسويق بالممارسة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20261007-language-center">
+    <script src="curriculum.js?v=20261007-course-update" defer></script>
+    <script src="app.js?v=20261007-hero-cta-auth" defer></script>
+    <script type="module" src="auth.js?v=20261007-local-preview"></script>
+</head>
+
+<body>
+    <header class="topbar">
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+            <a href="#courses">الدروس</a>
+            <a href="#path">مسارات التعلّم</a>
+            <a href="#about">عن المنصة</a>
+        </nav>
+        <div class="language-switcher" role="group" aria-label="اختر اللغة">
+            <button type="button" data-language="ar" aria-pressed="true">ع</button>
+            <button type="button" data-language="en" aria-pressed="false">EN</button>
+            <button type="button" data-language="fr" aria-pressed="false">FR</button>
+        </div>
+        <div class="top-actions">
+            <button class="admin-trigger" id="auth-signout" type="button" hidden>تسجيل الخروج</button>
+            <button class="admin-trigger" id="admin-open" type="button" hidden><span class="admin-dot"></span> لوحة
+                الإدارة</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-photo" role="img" aria-label="مساحة عمل إبداعية للتسويق"></div>
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+                <p class="eyebrow"><span class="eyebrow-line"></span><span id="hero-kicker">مختبر التسويق العملي</span>
+                </p>
+                <h1 id="hero-title">فكرتك تستحق<br>أن <em>يراها العالم.</em></h1>
+                <p class="hero-description" id="hero-description">تعلّم كيف تبني علامة يحبّها الناس، وتصنع محتوى يلفت
+                    الانتباه، وتحول الأرقام إلى قرارات ذكية.</p>
+                <div class="hero-actions">
+                    <a class="button button-lime" id="hero-cta" href="#register">ابدأ التعلّم <span
+                            aria-hidden="true">←</span></a>
+                    <span class="hero-note"><span class="live-dot"></span> 24 درساً عملياً في مكان واحد</span>
+                </div>
+            </div>
+            <div class="hero-index"><span>01</span><span class="index-rule"></span><span>04</span></div>
+            <div class="hero-caption"><span>معرفة تتحول إلى أثر</span><span>تعلّم. جرّب. انمو.</span></div>
+        </section>
+
+        <section class="intro-strip" id="about">
+            <p class="intro-label">مدرسة التسويق الجديدة</p>
+            <p class="intro-copy">من أول فكرة <span>إلى أول عميل.</span></p>
+            <p class="intro-aside">أدوات واضحة، أمثلة حقيقية، وخطوات تقدر تبدأ بها اليوم.</p>
+        </section>
+
+        <section class="course-section" id="courses">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> مكتبة المعرفة</p>
+                    <h2>تعلّم على <em>طريقتك.</em></h2>
+                </div>
+                <p class="section-summary">اختر موضوعاً يهمّك، وابدأ من المستوى الذي يناسبك.</p>
+            </div>
+            <div class="course-lock" id="course-lock">
+                <div>
+                    <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span><span
+                            id="course-lock-kicker">المحتوى للأعضاء</span></p>
+                    <h3 id="course-lock-title">سجّل باش تفتح مكتبة الدروس</h3>
+                    <p id="course-lock-description">ابعث تسجيلك، وبعد نجاح الإرسال تولّي الدروس متاحة على هذا المتصفح.
+                    </p>
+                </div>
+            </div>
+            <div id="course-catalog" hidden>
+                <div class="course-tools">
+                    <div class="filter-list" id="category-filters" aria-label="تصفية حسب التصنيف"></div>
+                    <label class="search-box"><span aria-hidden="true">⌕</span><input id="course-search" type="search"
+                            placeholder="ابحث عن درس أو موضوع" aria-label="ابحث عن درس أو موضوع"><kbd>/</kbd></label>
+                </div>
+                <div class="course-grid" id="course-grid" aria-live="polite"></div>
+                <p class="empty-state" id="empty-state" hidden>ما لقينا دروس تطابق بحثك. جرّب كلمة ثانية.</p>
+                <div class="catalog-footer"><span id="course-count">0 درس</span><span
+                        class="footer-rule"></span><span>المعرفة تكبر بالمشاركة</span></div>
+            </div>
+        </section>
+
+        <section class="path-section" id="path">
+            <div class="path-copy">
+                <p class="eyebrow"><span class="eyebrow-line"></span> خريطة البداية</p>
+                <h2>كل مهارة<br>تفتح <em>باباً.</em></h2>
+                <p>ما تحتاج تعرف كل شيء من البداية. خذ خطوة صغيرة، ابنِ أساسك، وخلي التطبيق يقودك للخطوة اللي بعدها.</p>
+                <a class="text-link" href="#courses">شوف الدروس المتاحة <span aria-hidden="true">←</span></a>
+            </div>
+            <div class="path-steps">
+                <article class="path-step"><span class="step-number">01</span>
+                    <div>
+                        <h3>افهم جمهورك</h3>
+                        <p>اكتشف احتياجات الناس وصِغ رسالة تهمّهم.</p>
+                    </div><span class="step-arrow" aria-hidden="true">↙</span>
+                </article>
+                <article class="path-step"><span class="step-number">02</span>
+                    <div>
+                        <h3>اصنع حضورك</h3>
+                        <p>ابنِ هوية واضحة ومحتوى له شخصية.</p>
+                    </div><span class="step-arrow" aria-hidden="true">↙</span>
+                </article>
+                <article class="path-step"><span class="step-number">03</span>
+                    <div>
+                        <h3>قِس وتطوّر</h3>
+                        <p>حوّل النتائج إلى قرارات وخطوات أفضل.</p>
+                    </div><span class="step-arrow" aria-hidden="true">↙</span>
+                </article>
+            </div>
+            <span class="path-stamp" aria-hidden="true">تعلّم<br>بالتجربة<br><b>✳</b></span>
+        </section>
+        <section class="register-section" id="register">
+            <div class="register-copy">
+                <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span><span id="register-kicker">ابدأ
+                        رحلتك</span></p>
+                <h2 id="register-title">خلّي التعلّم<br><em>يبدأ اليوم.</em></h2>
+                <p id="register-description">سجّل اهتمامك، ونبعثولك جديد الدروس والموارد على بريدك.</p>
+                <p class="register-privacy" id="register-privacy">بإرسال النموذج، توافق على مشاركة بياناتك عبر
+                    FormSubmit لإيصال طلب التسجيل إلى بريد المنصة.</p>
+            </div>
+            <form class="register-form" id="signup-form" action="https://formsubmit.co/ajax/rayenrach41@gmail.com"
+                method="POST">
+                <input type="hidden" name="_subject" value="تسجيل جديد في منصة مِداد">
+                <input type="hidden" name="_template" value="table">
+                <label for="signup-name"><span id="signup-name-label">الاسم الكامل</span><input id="signup-name"
+                        name="name" type="text" autocomplete="name" required maxlength="100" placeholder="اسمك"></label>
+                <label for="signup-email"><span id="signup-email-label">البريد الإلكتروني</span><input id="signup-email"
+                        name="email" type="email" autocomplete="email" required maxlength="254"
+                        placeholder="name@example.com"></label>
+                <button class="button button-dark" id="signup-submit" type="submit">إرسال التسجيل <span
+                        aria-hidden="true">←</span></button>
+                <p class="register-status" id="signup-status" role="status" aria-live="polite"></p>
+            </form>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>مساحة للأفكار اللي تستحق تكبر.</p>
+        <span>© <span id="year"></span> مِداد</span>
+    </footer>
+
+    <dialog class="admin-dialog" id="admin-dialog" aria-labelledby="admin-title">
+        <div class="admin-shell">
+            <aside class="admin-sidebar">
+                <a class="wordmark admin-wordmark" href="#home"><span
+                        class="wordmark-mark">م</span><span>مِداد</span></a>
+                <p class="admin-side-label">مساحة الإدارة</p>
+                <button class="admin-tab active" data-admin-tab="courses" type="button"><span>▤</span> الدروس <b
+                        id="admin-course-total">0</b></button>
+                <button class="admin-tab" data-admin-tab="categories" type="button"><span>◫</span> التصنيفات</button>
+                <button class="admin-tab" data-admin-tab="settings" type="button"><span>⚙</span> الصفحة
+                    الرئيسية</button>
+                <div class="admin-sidebar-bottom"><span class="live-dot"></span> التغييرات محفوظة على هذا الجهاز</div>
+            </aside>
+            <section class="admin-main">
+                <div class="admin-topline">
+                    <div>
+                        <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> إدارة المنصة</p>
+                        <h2 id="admin-title">الدروس</h2>
+                    </div>
+                    <div class="admin-heading-actions">
+                        <div class="language-switcher" role="group" aria-label="اختر اللغة">
+                            <button type="button" data-language="ar" aria-pressed="true">ع</button>
+                            <button type="button" data-language="en" aria-pressed="false">EN</button>
+                            <button type="button" data-language="fr" aria-pressed="false">FR</button>
+                        </div>
+                        <button class="icon-button" id="admin-close" type="button" aria-label="إغلاق لوحة الإدارة"
+                            title="إغلاق">✕</button>
+                    </div>
+                </div>
+                <div class="admin-panel active" data-admin-panel="courses">
+                    <div class="admin-toolbar">
+                        <p>أضف الدروس ورتّب محتوى مكتبتك.</p>
+                    </div>
+                </div>
+                <div class="admin-panel" data-admin-panel="categories">
+                    <div class="admin-toolbar">
+                        <p>التصنيفات تنظّم الدروس وتسهّل اكتشافها.</p>
+                    </div>
+                    <form class="inline-form" id="category-form">
+                        <div class="category-language-fields">
+                            <label for="category-name-ar">اسم التصنيف بالعربية<input id="category-name-ar"
+                                    name="name-ar" required maxlength="32"></label>
+                            <label for="category-name-en">Category name in English<input id="category-name-en"
+                                    name="name-en" required maxlength="32"></label>
+                            <label for="category-name-fr">Nom de catégorie en français<input id="category-name-fr"
+                                    name="name-fr" required maxlength="32"></label>
+                        </div>
+                        <div class="inline-form-controls"><button class="button button-dark" type="submit">إضافة التصنيف
+                                <span aria-hidden="true">＋</span></button></div>
+                    </form>
+                    <div class="category-admin-list" id="admin-category-list"></div>
+                </div>
+                <div class="admin-panel" data-admin-panel="settings">
+                    <div class="admin-toolbar">
+                        <p>عدّل الرسالة الأولى التي تظهر لزوار المنصة.</p>
+                    </div>
+                    <form class="settings-form" id="settings-form">
+                        <label>السطر التعريفي<input name="kicker" maxlength="60"></label>
+                        <label>العنوان الرئيسي<input name="title" maxlength="90" required></label>
+                        <label>نبذة قصيرة<textarea name="description" rows="3" maxlength="220"
+                                required></textarea></label>
+                        <button class="button button-dark" type="submit">حفظ التغييرات <span
+                                aria-hidden="true">↙</span></button>
+                    </form>
+                </div>
+                <p class="admin-notice" id="admin-notice" role="status" aria-live="polite"></p>
+                <p class="local-warning">ملاحظة: هذه النسخة تحفظ البيانات داخل المتصفح الحالي فقط، ولا توفر تسجيل دخول
+                    أو قاعدة بيانات مشتركة.</p>
+            </section>
+        </div>
+    </dialog>
+
+    <dialog class="editor-dialog" id="editor-dialog" aria-labelledby="editor-title">
+        <form class="editor-form" id="course-form">
+            <div class="editor-heading">
+                <div>
+                    <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> محتوى المكتبة</p>
+                    <h2 id="editor-title">درس جديد</h2>
+                </div><button class="icon-button" id="editor-close" type="button" aria-label="إغلاق">✕</button>
+            </div>
+            <input type="hidden" name="id">
+            <label><span data-i18n="courseTitleLabel">عنوان الدرس</span><input name="title" required maxlength="70"
+                    placeholder="مثال: أساسيات بناء العلامة التجارية"></label>
+            <label><span data-i18n="courseDescriptionLabel">وصف مختصر</span><textarea name="description" required
+                    maxlength="180" rows="3" placeholder="ما الذي سيخرج به المتعلّم من هذا الدرس؟"></textarea></label>
+            <div class="form-row"><label><span data-i18n="categoryLabel">التصنيف</span><select name="category"
+                        required></select></label><label><span data-i18n="levelLabel">المستوى</span><select
+                        name="level">
+                        <option value="beginner">مبتدئ</option>
+                        <option value="intermediate">متوسط</option>
+                        <option value="advanced">متقدم</option>
+                    </select></label></div>
+            <div class="form-row"><label><span data-i18n="durationLabel">المدة</span><input name="duration" required
+                        maxlength="24" placeholder="مثال: 6 دروس · 48 دقيقة"></label><label><span
+                        data-i18n="imageLabel">رابط الصورة</span><input name="image" type="url"
+                        placeholder="https://..."></label></div>
+            <label><span data-i18n="lessonUrlLabel">رابط الدرس (اختياري)</span><input name="url" type="url"
+                    placeholder="https://..."></label>
+            <label><span data-i18n="curriculumLabel">المنهج التفصيلي لكل لغة</span><textarea name="curriculumText"
+                    rows="10" placeholder="## عنوان الدرس&#10;شرح الدرس مع المثال&#10;&gt; تطبيق عملي"
+                    required></textarea></label>
+            <div class="editor-actions"><button class="button button-light" id="editor-cancel"
+                    type="button">إلغاء</button><button class="button button-dark" type="submit">حفظ الدرس <span
+                        aria-hidden="true">↙</span></button></div>
+        </form>
+    </dialog>
+
+    <dialog class="lesson-dialog" id="lesson-dialog" aria-labelledby="lesson-dialog-title">
+        <article class="lesson-reader">
+            <header class="lesson-reader-header">
+                <div>
+                    <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span><span id="lesson-category"></span>
+                    </p>
+                    <h2 id="lesson-dialog-title"></h2>
+                    <p id="lesson-course-description"></p>
+                </div>
+                <button class="icon-button" id="lesson-close" type="button" aria-label="إغلاق">✕</button>
+            </header>
+            <div class="lesson-reader-layout">
+                <nav class="lesson-outline" id="lesson-outline" aria-label="فهرس الدروس"></nav>
+                <section class="lesson-current">
+                    <p class="lesson-counter" id="lesson-counter"></p>
+                    <h3 id="lesson-title"></h3>
+                    <div class="lesson-body" id="lesson-body"></div>
+                    <aside class="lesson-challenge">
+                        <h4 id="lesson-challenge-title"></h4>
+                        <p id="lesson-challenge"></p>
+                    </aside>
+                    <div class="lesson-controls">
+                        <button class="button button-light" id="lesson-previous" type="button"></button>
+                        <div class="lesson-progress" id="lesson-progress" aria-hidden="true"></div>
+                        <button class="button button-dark" id="lesson-next" type="button"></button>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </dialog>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isVerifiedUser() {
+      return request.auth != null
+        && request.auth.token.email_verified == true;
+    }
+
+    function isPlatformOwner() {
+      return isVerifiedUser()
+        && request.auth.token.email == 'rayenrach41@gmail.com';
+    }
+
+    match /curriculum/{courseId} {
+      allow get, list: if isVerifiedUser();
+      allow create, update: if isPlatformOwner()
+        && request.resource.data.keys().hasOnly(['ar', 'en', 'fr'])
+        && request.resource.data.keys().hasAll(['ar', 'en', 'fr']);
+      allow delete: if isPlatformOwner();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
